@@ -1,2 +1,0 @@
-# Daily-practices
-Daily practices
