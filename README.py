@@ -58,3 +58,48 @@ while (score<A):                            #This line is used to run the loop t
         score +=1                            #Then after the loop run it will increase the score value 
     start +=1                                #Then after the loop run it will increase the start value 
 
+########################################################
+
+
+# Combine file handling and classes
+# Modify your student manager project to use a `Student` class
+# Add methods to save/load student data to/from a file
+
+class student():
+
+    def __init__(self,name,age,roll):
+        self.name = name
+        self.age = age
+        self.roll = roll
+    
+    def display(self):
+        print(f'{self.name},{self.age},{self.roll}')
+    
+data = {}
+
+def A():
+    N = int(input('Kindly enter the number of students your going to enter :').strip())
+    for i in range(N):
+        name, age, roll = input('Enter the details of the students (name,age,roll_no):').split()
+        data[roll] = student(name,age,roll)
+    print('uploaded')
+
+def displays():
+    for i , j in data.items():
+        j.display()
+
+def upload():
+    A = input('do you want to upload this details into files (yes/no)').strip().lower()
+    if A == 'yes':
+        with open (r'Bosco.txt','w') as file:
+            for i,j in data.items():
+                file.write(f'{j.name},{j.age},{j.roll}\n')
+        print('uploaded')
+    else:
+        print('Notes thanks')
+
+A()
+displays()
+upload()
+displays()
+        
